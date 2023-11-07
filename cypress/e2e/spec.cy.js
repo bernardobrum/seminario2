@@ -204,7 +204,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(0);
     cy.get(".success").click();
     cy.url().should("include", "/screen3");
-    cy.get(".input").type("999");
+    cy.get(".input").type("1000");
     cy.wait(0);
     cy.get(".success").click();
     cy.url().should("include", "/screen4");
