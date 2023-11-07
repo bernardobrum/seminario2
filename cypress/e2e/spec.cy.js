@@ -29,7 +29,7 @@ describe("Teste simulador de desconto", () => {
     cy.url().should("include", "/screen4");
     cy.get(".discount")
       .should("be.visible")
-      .should("include.text", "Graduação");
+      .should("include.text", "Seu desconto no nível de ensino Graduação é de: 20%.");
     cy.wait(0);
   });
 
@@ -49,7 +49,7 @@ describe("Teste simulador de desconto", () => {
     cy.url().should("include", "/screen4");
     cy.get(".discount")
       .should("be.visible")
-      .should("include.text", "Pós-graduação");
+      .should("include.text", "Seu desconto no nível de ensino Pós-graduação é de: 20%.");
     cy.wait(0);
   });
 
@@ -67,7 +67,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(0);
     cy.get(".success").click();
     cy.url().should("include", "/screen4");
-    cy.get(".discount").should("be.visible").should("include.text", "Mestrado");
+    cy.get(".discount").should("be.visible").should("include.text", "Seu desconto no nível de ensino Mestrado é de: 20%.");
     cy.wait(0);
   });
 
@@ -100,7 +100,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(0);
     cy.get(".success").click();
     cy.url().should("include", "/screen4");
-    cy.get(".discount").should("be.visible").should("include.text", "20%");
+    cy.get(".discount").should("be.visible").should("include.text", "Seu desconto no nível de ensino Graduação é de: 20%.");
     cy.wait(0);
   });
 
@@ -118,7 +118,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(0);
     cy.get(".success").click();
     cy.url().should("include", "/screen4");
-    cy.get(".discount").should("be.visible").should("include.text", "20%");
+    cy.get(".discount").should("be.visible").should("include.text", "Seu desconto no nível de ensino Graduação é de: 20%.");
     cy.wait(0);
   });
 
@@ -136,7 +136,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(0);
     cy.get(".success").click();
     cy.url().should("include", "/screen4");
-    cy.get(".discount").should("be.visible").should("include.text", "30%");
+    cy.get(".discount").should("be.visible").should("include.text", "Seu desconto no nível de ensino Graduação é de: 30%.");
     cy.wait(0);
   });
 
@@ -154,7 +154,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(0);
     cy.get(".success").click();
     cy.url().should("include", "/screen4");
-    cy.get(".discount").should("be.visible").should("include.text", "30%");
+    cy.get(".discount").should("be.visible").should("include.text", "Seu desconto no nível de ensino Graduação é de: 30%.");
     cy.wait(0);
   });
 
@@ -172,7 +172,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(0);
     cy.get(".success").click();
     cy.url().should("include", "/screen4");
-    cy.get(".discount").should("be.visible").should("include.text", "50%");
+    cy.get(".discount").should("be.visible").should("include.text", "Seu desconto no nível de ensino Graduação é de: 50%.");
     cy.wait(0);
   });
 
@@ -190,7 +190,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(0);
     cy.get(".success").click();
     cy.url().should("include", "/screen4");
-    cy.get(".discount").should("be.visible").should("include.text", "50%");
+    cy.get(".discount").should("be.visible").should("include.text", "Seu desconto no nível de ensino Graduação é de: 50%.");
     cy.wait(0);
   });
 
@@ -208,7 +208,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(0);
     cy.get(".success").click();
     cy.url().should("include", "/screen4");
-    cy.get(".discount").should("be.visible").should("include.text", "50%");
+    cy.get(".discount").should("be.visible").should("include.text", "Seu desconto no nível de ensino Graduação é de: 50%.");
     cy.wait(0);
   });
 
