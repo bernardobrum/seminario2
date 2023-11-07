@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 function Screen1() {
   const navigate = useNavigate();
   const [checked, setChecked] = useState();
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const nextPage = () => {
     if (checked === 1) {
       navigate("/screen2");
     } else {
-      setError('Você deve ter completado o ensino médio para se matricular!')
+      setError("Você deve ter completado o ensino médio para se matricular!");
     }
   };
 
@@ -33,7 +33,9 @@ function Screen1() {
       />
       Não
       <br />
-      <button className="success" onClick={nextPage}>Continuar</button>
+      <button className="success" onClick={nextPage}>
+        Continuar
+      </button>
       <br />
       <p className="error">{error}</p>
     </div>

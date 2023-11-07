@@ -13,13 +13,13 @@ describe("Teste simulador de desconto", () => {
     cy.wait(3000);
   });
 
-  it("Deve retornar desconto igual a 20% quando tiver ensino médio, selecionar um nível de ensino, e nota < 600", () => {
+  it("Deve retornar desconto igual a 20% quando tiver ensino médio, selecionar o nível de ensino graduação, e nota < 600", () => {
     cy.visit("http://localhost:3000/screen1");
     cy.get(".checkbox1").click();
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen2");
-    cy.get(".select").select("1");
+    cy.get(".select").select("Graduação");
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen3");
@@ -27,7 +27,52 @@ describe("Teste simulador de desconto", () => {
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen4");
-    cy.get(".discount").should("be.visible").should("include.text", "20%");
+    cy.get(".discount")
+      .should("be.visible")
+      .should("include.text", "20%")
+      .should("include.text", "Graduação");
+    cy.wait(3000);
+  });
+
+  it("Deve retornar desconto igual a 20% quando tiver ensino médio, selecionar o nível de ensino pós-graduação, e nota < 600", () => {
+    cy.visit("http://localhost:3000/screen1");
+    cy.get(".checkbox1").click();
+    cy.wait(3000);
+    cy.get(".success").click();
+    cy.url().should("include", "/screen2");
+    cy.get(".select").select("Pós-graduação");
+    cy.wait(3000);
+    cy.get(".success").click();
+    cy.url().should("include", "/screen3");
+    cy.get(".input").type("599");
+    cy.wait(3000);
+    cy.get(".success").click();
+    cy.url().should("include", "/screen4");
+    cy.get(".discount")
+      .should("be.visible")
+      .should("include.text", "20%")
+      .should("include.text", "Pós-graduação");
+    cy.wait(3000);
+  });
+
+  it("Deve retornar desconto igual a 20% quando tiver ensino médio, selecionar o nível de ensino mestrado, e nota < 600", () => {
+    cy.visit("http://localhost:3000/screen1");
+    cy.get(".checkbox1").click();
+    cy.wait(3000);
+    cy.get(".success").click();
+    cy.url().should("include", "/screen2");
+    cy.get(".select").select("Mestrado");
+    cy.wait(3000);
+    cy.get(".success").click();
+    cy.url().should("include", "/screen3");
+    cy.get(".input").type("599");
+    cy.wait(3000);
+    cy.get(".success").click();
+    cy.url().should("include", "/screen4");
+    cy.get(".discount")
+      .should("be.visible")
+      .should("include.text", "20%")
+      .should("include.text", "Mestrado");
     cy.wait(3000);
   });
 
@@ -37,7 +82,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen2");
-    cy.get(".select").select("1");
+    cy.get(".select").select("Graduação");
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen3");
@@ -55,7 +100,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen2");
-    cy.get(".select").select("1");
+    cy.get(".select").select("Graduação");
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen3");
@@ -73,7 +118,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen2");
-    cy.get(".select").select("1");
+    cy.get(".select").select("Graduação");
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen3");
@@ -91,7 +136,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen2");
-    cy.get(".select").select("1");
+    cy.get(".select").select("Graduação");
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen3");
@@ -124,7 +169,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen2");
-    cy.get(".select").select("1");
+    cy.get(".select").select("Graduação");
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen3");
@@ -142,7 +187,7 @@ describe("Teste simulador de desconto", () => {
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen2");
-    cy.get(".select").select("1");
+    cy.get(".select").select("Graduação");
     cy.wait(3000);
     cy.get(".success").click();
     cy.url().should("include", "/screen3");
